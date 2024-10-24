@@ -1,4 +1,4 @@
-# Unleash the Power of Azure OpenAI
+# Unleash the Power of Azure OpenAI 
 
 1. [Introduction](#introduction)
 1. [Solution Overview](/docs/1-introduction.md)
