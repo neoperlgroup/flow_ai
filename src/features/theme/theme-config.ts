@@ -1,5 +1,5 @@
 export const AI_NAME = "Flow AI";
-export const AI_DESCRIPTION = "Your personal Neoperl Chat AI.";
+export const AI_DESCRIPTION = "Your personal Neoperl Chat AI";
 export const CHAT_DEFAULT_PERSONA = AI_NAME + " default";
 
 export const CHAT_DEFAULT_SYSTEM_PROMPT = `You are a friendly ${AI_NAME} AI assistant. You must always return in markdown format.
