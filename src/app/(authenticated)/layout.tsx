@@ -15,11 +15,19 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const renderChildren = React.Children.map(children, (child) => {
+    // Check if the child is the "extensions" component
+    if (React.isValidElement(child) && child.type === "Extensions") {
+      return null; // Return null if you want to hide it
+    }
+    return child;
+  });
+
   return (
     <AuthenticatedProviders>
       <div className={cn("flex flex-1 items-stretch")}>
         <MainMenu />
-        <div className="flex-1 flex">{children}</div>
+        <div className="flex-1 flex">{renderChildren}</div>
       </div>
     </AuthenticatedProviders>
   );
