@@ -47,6 +47,19 @@ Example:
         }
       />
       <HeroButton
+        title="Neonet News Editor"
+        description="Neonet news editor that helps you create internal news posts according to our Neonet guide lines."
+        icon={<Languages />}
+        onClick={() =>
+          personaStore.newPersonaAndOpen({
+            name: "Neonet News Editor",
+            personaMessage:
+              "You are an expert in creating internal intranet news posts. You will help users create Neonet news posts. The news posts should always be informal, short and sweet. Always start with a short introduction of no more than two sentences. Use emojis to create a joyous atmosphere, but don't overdo it. Be nice.",
+            description: "Neonet news editor that helps you create internal news posts according to our Neonet guide lines.",
+          })
+        }
+      />
+      <HeroButton
         title="ReactJS Expert"
         description="ReactJs expert who can write clean functional components."
         icon={<Atom />}
