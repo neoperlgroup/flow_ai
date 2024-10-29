@@ -20,6 +20,7 @@ export const CreatePrompt = async (
   try {
     const user = await getCurrentUser();
 
+    /*
     if (!user.isAdmin) {
       return {
         status: "UNAUTHORIZED",
@@ -30,6 +31,7 @@ export const CreatePrompt = async (
         ],
       };
     }
+    */
 
     const modelToSave: PromptModel = {
       id: uniqueId(),
