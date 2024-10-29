@@ -1,6 +1,6 @@
 "use client";
 import { Hero, HeroButton } from "@/features/ui/hero";
-import { Atom, Languages, VenetianMask } from "lucide-react";
+import { Atom, Languages, VenetianMask, SquarePen } from "lucide-react";
 import { personaStore } from "../persona-store";
 
 export const PersonaHero = () => {
@@ -49,7 +49,7 @@ Example:
       <HeroButton
         title="Neonet News Editor"
         description="Neonet news editor that helps you create internal news posts according to our Neonet guide lines."
-        icon={<Languages />}
+        icon={<SquarePen />}
         onClick={() =>
           personaStore.newPersonaAndOpen({
             name: "Neonet News Editor",
