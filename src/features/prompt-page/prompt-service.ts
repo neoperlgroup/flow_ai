@@ -83,11 +83,19 @@ export const FindAllPrompts = async (): Promise<
 > => {
   try {
     const querySpec: SqlQuerySpec = {
-      query: "SELECT * FROM root r WHERE r.type=@type",
+      query: "SELECT * FROM root r WHERE r.type=@type AND (r.isPublished=@isPublished OR r.userId=@userId) ORDER BY r.createdAt DESC",
       parameters: [
         {
           name: "@type",
           value: PROMPT_ATTRIBUTE,
+        },
+        {
+          name: "@isPublished",
+          value: true,
+        },
+        {
+          name: "@userId",
+          value: await userHasedId(),
         },
       ],
     };
@@ -119,9 +127,9 @@ export const EnsurePromptOperation = async (
   const currentUser = await getCurrentUser();
 
   if (promptResponse.status === "OK") {
-    if (currentUser.isAdmin) {
+    //if (currentUser.isAdmin) { ### so that everyone can create prompts, not only admins
       return promptResponse;
-    }
+    //}
   }
 
   return {
