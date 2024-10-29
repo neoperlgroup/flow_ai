@@ -95,7 +95,7 @@ export const FindAllPrompts = async (): Promise<
         },
         {
           name: "@userId",
-          value: await userHasedId(),
+          value: await userHashedId(),
         },
       ],
     };
