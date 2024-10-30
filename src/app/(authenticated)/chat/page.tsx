@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <ChatHome
       personas={personaResponse.response}
-      extensions={extensionResponse.response}
+      //extensions={extensionResponse.response}
     />
   );
 }
