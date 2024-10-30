@@ -43,28 +43,29 @@ export const MainMenu = async () => {
               <VenetianMask {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          {{user.isAdmin && (
+          {user.isAdmin && (
             <>
               <MenuItem tooltip="extensions">
               <MenuLink href="/extensions" ariaLabel="Go to the Extensions configuration page">
                 <PocketKnife {...menuIconProps} />
               </MenuLink>
-            </MenuItem>}
+            </MenuItem>
             </>
+          )}
           <MenuItem tooltip="prompts">
             <MenuLink href="/prompt" ariaLabel="Go to the Prompt Library configuration page">
               <Book {...menuIconProps} />
             </MenuLink>
           </MenuItem>
-          {/*user.isAdmin && (
+          {/*{user.isAdmin && (
             <>
               <MenuItem tooltip="reporting">
                 <MenuLink href="/reporting" ariaLabel="Go to the Admin reporting" >
                   <Sheet {...menuIconProps} />
                 </MenuLink>
               </MenuItem>
-            </>*/}
-          )}
+            </>
+          )}*/}
         </MenuItemContainer>
         <MenuItemContainer>
           <MenuItem tooltip="Profile">
