@@ -74,11 +74,6 @@ export const ChatInput = () => {
         onChange={(e) => {
           chatStore.updateInput(e.currentTarget.value);
         }}
-        onPaste={(e) => {
-          setTimeout(() => {
-            chatStore.updateInput(e.currentTarget.value);
-          }, 0);
-        }}
       />
       <ChatInputActionArea>
         <ChatInputSecondaryActionArea>
