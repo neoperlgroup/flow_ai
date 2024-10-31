@@ -64,6 +64,10 @@ h1 {
   font-weight: bold;
 }
 
+.custom-padding {
+  padding-bottom: 30px
+}
+
 @layer base {
   * {
     @apply border-border;
