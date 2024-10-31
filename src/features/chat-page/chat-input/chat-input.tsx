@@ -37,7 +37,7 @@ export const ChatInput = () => {
   const { uploadButtonLabel } = useFileStore();
   const { isPlaying } = useTextToSpeech();
   const { isMicrophoneReady } = useSpeechToText();
-  const { rows, calculateHeight } = useChatInputDynamicHeight();
+  const { rows } = useChatInputDynamicHeight();
 
   const submitButton = React.useRef<HTMLButtonElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
@@ -73,11 +73,10 @@ export const ChatInput = () => {
         rows={rows}
         onChange={(e) => {
           chatStore.updateInput(e.currentTarget.value);
-          calculateHeight(e.currentTarget);
         }}
         onPaste={(e) => {
           setTimeout(() => {
-            calculateHeight(e.currentTarget);
+            chatStore.updateInput(e.currentTarget.value);
           }, 0);
         }}
       />
