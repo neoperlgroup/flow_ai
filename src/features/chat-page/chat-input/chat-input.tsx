@@ -64,7 +64,7 @@ export const ChatInput = () => {
           }
         }}
         onKeyDown={(e) => {
-          onKeyDown(e, submit);
+          onKeyDown(e);
         }}
         onKeyUp={(e) => {
           onKeyUp(e);
@@ -73,6 +73,12 @@ export const ChatInput = () => {
         rows={rows}
         onChange={(e) => {
           chatStore.updateInput(e.currentTarget.value);
+          calculateHeight(e.currentTarget);
+        }}
+        onPaste={(e) => {
+          setTimeout(() => {
+            calculateHeight(e.currentTarget);
+          }, 0);
         }}
       />
       <ChatInputActionArea>
