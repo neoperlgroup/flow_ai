@@ -37,7 +37,7 @@ export const ChatInput = () => {
   const { uploadButtonLabel } = useFileStore();
   const { isPlaying } = useTextToSpeech();
   const { isMicrophoneReady } = useSpeechToText();
-  const { rows } = useChatInputDynamicHeight();
+  const { rows, calculateHeight } = useChatInputDynamicHeight();
 
   const submitButton = React.useRef<HTMLButtonElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
