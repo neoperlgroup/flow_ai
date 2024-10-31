@@ -65,7 +65,8 @@ h1 {
 }
 
 .custom-padding {
-  padding-bottom: 30px
+  padding-bottom: 30px;
+  background-color: hsl(var(--background));
 }
 
 @layer base {
