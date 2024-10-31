@@ -52,7 +52,7 @@ export const onKeyUp = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
 };
 
 export const useChatInputDynamicHeight = () => {
-  const state = useSnapshot(chatStore); 
+  const state = useSnapshot(state); 
 
   const calculateHeight = (textarea: HTMLTextAreaElement) => {
     const lineHeight = 20; 
