@@ -64,7 +64,7 @@ export const ChatInput = () => {
           }
         }}
         onKeyDown={(e) => {
-          onKeyDown(e, sumbit);
+          onKeyDown(e, submit);
         }}
         onKeyUp={(e) => {
           onKeyUp(e);
