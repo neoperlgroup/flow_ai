@@ -4,7 +4,7 @@ function clamp(num: number, min: number, max: number): number {
   return Math.min(Math.max(num, min), max);
 }
 
-React.useEffect(() => 
+React.useEffect(() => {
   const input = document.querySelector("#chatinput")
   const handleInput = (e: Event) => {
       if (!input) return;
