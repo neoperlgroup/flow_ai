@@ -10,12 +10,23 @@ export const ChatTextInput = React.forwardRef<
 >(({ ...props }, ref) => {
 
     React.useEffect(() => {
-      if (!ref) return
-      ref.addEventListener("input", (e) => {
-        ref.style.height = "auto";
-        ref.style.height = clamp(ref.scrollHeight, 40, 200) + "px";
-      })
-    });
+      if (!ref.current) return;
+    
+      const handleInput = (e: Event) => {
+        if (ref.current) {
+          ref.current.style.height = "auto";
+          // Assume `clamp` is a function to constrain the value
+          ref.current.style.height = clamp(ref.current.scrollHeight, 40, 200) + "px";
+        }
+      };
+    
+      ref.current.addEventListener("input", handleInput);
+    
+      // Cleanup function to remove event listener
+      return () => {
+        ref.current?.removeEventListener("input", handleInput);
+      };
+    }, []);
 
   return (
     <textarea
