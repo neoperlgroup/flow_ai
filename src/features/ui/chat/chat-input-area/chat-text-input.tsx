@@ -10,9 +10,9 @@ export const ChatTextInput = React.forwardRef<
 >(({ ...props }, ref) => {
 
     React.useEffect(() => {
-      ref?.current.addEventListener("input", (e) => {
-        ref.current.style.height = "auto";
-        ref.current.style.height = clamp(ref.current.scrollHeight, 40, 200) + "px";
+      ref?.addEventListener("input", (e) => {
+        ref.style.height = "auto";
+        ref.style.height = clamp(ref.scrollHeight, 40, 200) + "px";
       })
     });
 
