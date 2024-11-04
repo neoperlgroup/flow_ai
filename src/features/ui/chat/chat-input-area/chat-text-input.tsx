@@ -8,8 +8,8 @@ React.useEffect(() => {
   const input = document.querySelector("#chatinput")
   const handleInput = (e: Event) => {
       if (!input) return;
-      input.style.height = "auto";
-      input.style.height = clamp(input.scrollHeight, 40, 200) + "px";
+      e.target.style.height = "auto";
+      e.target.style.height = clamp(e.target.scrollHeight, 40, 200) + "px";
   };
 
   input.addEventListener("input", handleInput);
