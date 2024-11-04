@@ -1,8 +1,8 @@
 import React from "react";
 
-function clamp(num, min, max) {
+function clamp(num: number, min: number, max: number): number {
   return Math.min(Math.max(num, min), max);
-};
+}
 
 export const ChatTextInput = React.forwardRef<
   HTMLTextAreaElement,
