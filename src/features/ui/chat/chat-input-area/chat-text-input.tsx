@@ -10,7 +10,7 @@ export const ChatTextInput = React.forwardRef<
 >(({ ...props }, ref) => {
 
     React.useEffect(() => {
-      if (!ref.current) return;
+      if (!ref || !ref.current) return;
     
       const handleInput = (e: Event) => {
         if (ref.current) {
